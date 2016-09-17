@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA6CB4261D2C9F26000AC1F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6CB4251D2C9F26000AC1F8 /* AppDelegate.swift */; };
+		AA6CB4281D2C9F26000AC1F8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AA6CB4271D2C9F26000AC1F8 /* GameScene.sks */; };
+		AA6CB42A1D2C9F26000AC1F8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6CB4291D2C9F26000AC1F8 /* GameScene.swift */; };
+		AA6CB42C1D2C9F26000AC1F8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6CB42B1D2C9F26000AC1F8 /* GameViewController.swift */; };
+		AA6CB42F1D2C9F26000AC1F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6CB42D1D2C9F26000AC1F8 /* Main.storyboard */; };
+		AA6CB4311D2C9F26000AC1F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6CB4301D2C9F26000AC1F8 /* Assets.xcassets */; };
+		AA6CB4341D2C9F27000AC1F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6CB4321D2C9F27000AC1F8 /* LaunchScreen.storyboard */; };
+		AA6CB43F1D2C9F27000AC1F8 /* ReactorSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6CB43E1D2C9F27000AC1F8 /* ReactorSimulatorTests.swift */; };
+		AA6CB44A1D2C9F27000AC1F8 /* ReactorSimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6CB4491D2C9F27000AC1F8 /* ReactorSimulatorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA6CB43B1D2C9F27000AC1F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6CB41A1D2C9F26000AC1F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA6CB4211D2C9F26000AC1F8;
+			remoteInfo = ReactorSimulator;
+		};
+		AA6CB4461D2C9F27000AC1F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6CB41A1D2C9F26000AC1F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA6CB4211D2C9F26000AC1F8;
+			remoteInfo = ReactorSimulator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA6CB4221D2C9F26000AC1F8 /* ReactorSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactorSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6CB4251D2C9F26000AC1F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA6CB4271D2C9F26000AC1F8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		AA6CB4291D2C9F26000AC1F8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		AA6CB42B1D2C9F26000AC1F8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AA6CB42E1D2C9F26000AC1F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA6CB4301D2C9F26000AC1F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA6CB4331D2C9F27000AC1F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA6CB4351D2C9F27000AC1F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA6CB43A1D2C9F27000AC1F8 /* ReactorSimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactorSimulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6CB43E1D2C9F27000AC1F8 /* ReactorSimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactorSimulatorTests.swift; sourceTree = "<group>"; };
+		AA6CB4401D2C9F27000AC1F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA6CB4451D2C9F27000AC1F8 /* ReactorSimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactorSimulatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6CB4491D2C9F27000AC1F8 /* ReactorSimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactorSimulatorUITests.swift; sourceTree = "<group>"; };
+		AA6CB44B1D2C9F27000AC1F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA6CB41F1D2C9F26000AC1F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6CB4371D2C9F27000AC1F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6CB4421D2C9F27000AC1F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA6CB4191D2C9F25000AC1F8 = {
+			isa = PBXGroup;
+			children = (
+				AA6CB4241D2C9F26000AC1F8 /* ReactorSimulator */,
+				AA6CB43D1D2C9F27000AC1F8 /* ReactorSimulatorTests */,
+				AA6CB4481D2C9F27000AC1F8 /* ReactorSimulatorUITests */,
+				AA6CB4231D2C9F26000AC1F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA6CB4231D2C9F26000AC1F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA6CB4221D2C9F26000AC1F8 /* ReactorSimulator.app */,
+				AA6CB43A1D2C9F27000AC1F8 /* ReactorSimulatorTests.xctest */,
+				AA6CB4451D2C9F27000AC1F8 /* ReactorSimulatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA6CB4241D2C9F26000AC1F8 /* ReactorSimulator */ = {
+			isa = PBXGroup;
+			children = (
+				AA6CB4251D2C9F26000AC1F8 /* AppDelegate.swift */,
+				AA6CB4271D2C9F26000AC1F8 /* GameScene.sks */,
+				AA6CB4291D2C9F26000AC1F8 /* GameScene.swift */,
+				AA6CB42B1D2C9F26000AC1F8 /* GameViewController.swift */,
+				AA6CB42D1D2C9F26000AC1F8 /* Main.storyboard */,
+				AA6CB4301D2C9F26000AC1F8 /* Assets.xcassets */,
+				AA6CB4321D2C9F27000AC1F8 /* LaunchScreen.storyboard */,
+				AA6CB4351D2C9F27000AC1F8 /* Info.plist */,
+			);
+			path = ReactorSimulator;
+			sourceTree = "<group>";
+		};
+		AA6CB43D1D2C9F27000AC1F8 /* ReactorSimulatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA6CB43E1D2C9F27000AC1F8 /* ReactorSimulatorTests.swift */,
+				AA6CB4401D2C9F27000AC1F8 /* Info.plist */,
+			);
+			path = ReactorSimulatorTests;
+			sourceTree = "<group>";
+		};
+		AA6CB4481D2C9F27000AC1F8 /* ReactorSimulatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AA6CB4491D2C9F27000AC1F8 /* ReactorSimulatorUITests.swift */,
+				AA6CB44B1D2C9F27000AC1F8 /* Info.plist */,
+			);
+			path = ReactorSimulatorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA6CB4211D2C9F26000AC1F8 /* ReactorSimulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6CB44E1D2C9F27000AC1F8 /* Build configuration list for PBXNativeTarget "ReactorSimulator" */;
+			buildPhases = (
+				AA6CB41E1D2C9F26000AC1F8 /* Sources */,
+				AA6CB41F1D2C9F26000AC1F8 /* Frameworks */,
+				AA6CB4201D2C9F26000AC1F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactorSimulator;
+			productName = ReactorSimulator;
+			productReference = AA6CB4221D2C9F26000AC1F8 /* ReactorSimulator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA6CB4391D2C9F27000AC1F8 /* ReactorSimulatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6CB4511D2C9F27000AC1F8 /* Build configuration list for PBXNativeTarget "ReactorSimulatorTests" */;
+			buildPhases = (
+				AA6CB4361D2C9F27000AC1F8 /* Sources */,
+				AA6CB4371D2C9F27000AC1F8 /* Frameworks */,
+				AA6CB4381D2C9F27000AC1F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA6CB43C1D2C9F27000AC1F8 /* PBXTargetDependency */,
+			);
+			name = ReactorSimulatorTests;
+			productName = ReactorSimulatorTests;
+			productReference = AA6CB43A1D2C9F27000AC1F8 /* ReactorSimulatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AA6CB4441D2C9F27000AC1F8 /* ReactorSimulatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6CB4541D2C9F27000AC1F8 /* Build configuration list for PBXNativeTarget "ReactorSimulatorUITests" */;
+			buildPhases = (
+				AA6CB4411D2C9F27000AC1F8 /* Sources */,
+				AA6CB4421D2C9F27000AC1F8 /* Frameworks */,
+				AA6CB4431D2C9F27000AC1F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA6CB4471D2C9F27000AC1F8 /* PBXTargetDependency */,
+			);
+			name = ReactorSimulatorUITests;
+			productName = ReactorSimulatorUITests;
+			productReference = AA6CB4451D2C9F27000AC1F8 /* ReactorSimulatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA6CB41A1D2C9F26000AC1F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Christian Burkhart";
+				TargetAttributes = {
+					AA6CB4211D2C9F26000AC1F8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+					};
+					AA6CB4391D2C9F27000AC1F8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+						TestTargetID = AA6CB4211D2C9F26000AC1F8;
+					};
+					AA6CB4441D2C9F27000AC1F8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+						TestTargetID = AA6CB4211D2C9F26000AC1F8;
+					};
+				};
+			};
+			buildConfigurationList = AA6CB41D1D2C9F26000AC1F8 /* Build configuration list for PBXProject "ReactorSimulator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA6CB4191D2C9F25000AC1F8;
+			productRefGroup = AA6CB4231D2C9F26000AC1F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA6CB4211D2C9F26000AC1F8 /* ReactorSimulator */,
+				AA6CB4391D2C9F27000AC1F8 /* ReactorSimulatorTests */,
+				AA6CB4441D2C9F27000AC1F8 /* ReactorSimulatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA6CB4201D2C9F26000AC1F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6CB4281D2C9F26000AC1F8 /* GameScene.sks in Resources */,
+				AA6CB4341D2C9F27000AC1F8 /* LaunchScreen.storyboard in Resources */,
+				AA6CB4311D2C9F26000AC1F8 /* Assets.xcassets in Resources */,
+				AA6CB42F1D2C9F26000AC1F8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6CB4381D2C9F27000AC1F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6CB4431D2C9F27000AC1F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA6CB41E1D2C9F26000AC1F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6CB42A1D2C9F26000AC1F8 /* GameScene.swift in Sources */,
+				AA6CB42C1D2C9F26000AC1F8 /* GameViewController.swift in Sources */,
+				AA6CB4261D2C9F26000AC1F8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6CB4361D2C9F27000AC1F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6CB43F1D2C9F27000AC1F8 /* ReactorSimulatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6CB4411D2C9F27000AC1F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6CB44A1D2C9F27000AC1F8 /* ReactorSimulatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA6CB43C1D2C9F27000AC1F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA6CB4211D2C9F26000AC1F8 /* ReactorSimulator */;
+			targetProxy = AA6CB43B1D2C9F27000AC1F8 /* PBXContainerItemProxy */;
+		};
+		AA6CB4471D2C9F27000AC1F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA6CB4211D2C9F26000AC1F8 /* ReactorSimulator */;
+			targetProxy = AA6CB4461D2C9F27000AC1F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA6CB42D1D2C9F26000AC1F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA6CB42E1D2C9F26000AC1F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AA6CB4321D2C9F27000AC1F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA6CB4331D2C9F27000AC1F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA6CB44C1D2C9F27000AC1F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA6CB44D1D2C9F27000AC1F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA6CB44F1D2C9F27000AC1F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ReactorSimulator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Team5Games.ReactorSimulator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AA6CB4501D2C9F27000AC1F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ReactorSimulator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Team5Games.ReactorSimulator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		AA6CB4521D2C9F27000AC1F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = ReactorSimulatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Team5Games.ReactorSimulatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactorSimulator.app/ReactorSimulator";
+			};
+			name = Debug;
+		};
+		AA6CB4531D2C9F27000AC1F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ReactorSimulatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Team5Games.ReactorSimulatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactorSimulator.app/ReactorSimulator";
+			};
+			name = Release;
+		};
+		AA6CB4551D2C9F27000AC1F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = ReactorSimulatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Team5Games.ReactorSimulatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ReactorSimulator;
+			};
+			name = Debug;
+		};
+		AA6CB4561D2C9F27000AC1F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ReactorSimulatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Team5Games.ReactorSimulatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ReactorSimulator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA6CB41D1D2C9F26000AC1F8 /* Build configuration list for PBXProject "ReactorSimulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6CB44C1D2C9F27000AC1F8 /* Debug */,
+				AA6CB44D1D2C9F27000AC1F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA6CB44E1D2C9F27000AC1F8 /* Build configuration list for PBXNativeTarget "ReactorSimulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6CB44F1D2C9F27000AC1F8 /* Debug */,
+				AA6CB4501D2C9F27000AC1F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA6CB4511D2C9F27000AC1F8 /* Build configuration list for PBXNativeTarget "ReactorSimulatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6CB4521D2C9F27000AC1F8 /* Debug */,
+				AA6CB4531D2C9F27000AC1F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA6CB4541D2C9F27000AC1F8 /* Build configuration list for PBXNativeTarget "ReactorSimulatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6CB4551D2C9F27000AC1F8 /* Debug */,
+				AA6CB4561D2C9F27000AC1F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA6CB41A1D2C9F26000AC1F8 /* Project object */;
+}
