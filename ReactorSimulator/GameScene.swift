@@ -25,7 +25,7 @@ class GameScene: SKScene {
     var reactorPosition:Float = 0
     var primaryFlow:Float = 0
     var secondaryFlow:Float = 0
-    var reactTemp:Int = 500
+    var reactTemp:Int = 0
     var reactMax:Int = 1200
     var reactTarget:Float = 0.0
     var reactTempRate:Float = 0.0
@@ -74,11 +74,11 @@ class GameScene: SKScene {
     func tempMatch(){
         reactorRate()
         priCoolantRate()
-        heatExchRate()
         secCoolantRate()
-        coolTwrRate()
         turbineSpinRate()
         fuelTempAdjust()
+        heatExchRate()
+        coolTwrRate()
     }
     
     func reactorRate(){
@@ -90,7 +90,7 @@ class GameScene: SKScene {
             }
         }
         if(primaryFlow != 0){
-            reactTarget = (reactorPosition*(1000/primaryFlow)) + 500
+            reactTarget = (reactorPosition*(1000/primaryFlow))
             reactTarget *= fuelAvailable
         }
         if reactTarget > Float(reactTemp) {
@@ -141,7 +141,7 @@ class GameScene: SKScene {
     }
     
     func coolTwrRate(){
-            coolTwr = Int((0.1 * Double(heatExc)) + (0.2 * Double(secondaryFlow)))
+        coolTwr = Int((0.5 * Double(heatExc)) + (1.0 * Double(secTemp)))
         if coolTwr < 50 {
             coolTwr = 50
         }
