@@ -26,12 +26,20 @@ class GameScene: SKScene {
     var primaryFlow:Float = 0
     var secondaryFlow:Float = 0
     var reactTemp:Int = 500
+    var reactMax:Int = 1200
+    var reactTarget:Float = 0.0
     var reactTempRate:Float = 0.0
     var priTempRate:Float = 0.0
     var secTempRate:Float = 0.0
     var turbineRate:Float = 0.0
-    var priTemp:Int = 200
-    var secTemp:Int = 200
+    var priTemp:Int = 0
+    var heatExc:Int = 50
+    var priTarget:Float = 0.0
+    var priMax:Int = 250
+    var secTemp:Int = 0
+    var coolTwr:Int = 50
+    var secMax:Int = 250
+    var secTarget:Float = 0.0
     var turbineSpin:Int = 0
     var fuelAvailable:Float = 1.00
     var fuelCount:Int = 0
@@ -47,9 +55,9 @@ class GameScene: SKScene {
         reactorTempLabel = self.childNode(withName: "reactor_Temp") as! SKLabelNode
         reactorTempLabel.text = (String(reactTemp)) + "\u{00B0}" + "C"
         primaryTempLabel = self.childNode(withName: "primary_Temp") as! SKLabelNode
-        primaryTempLabel.text = (String(priTemp)) + "\u{00B0}" + "C"
+        primaryTempLabel.text = (String(heatExc)) + "\u{00B0}" + "C"
         secondaryTempLabel = self.childNode(withName: "secondary_Temp") as! SKLabelNode
-        secondaryTempLabel.text = (String(secTemp)) + "\u{00B0}" + "C"
+        secondaryTempLabel.text = (String(coolTwr)) + "\u{00B0}" + "C"
         turbineRpmLabel = self.childNode(withName: "turbine_Rpm") as! SKLabelNode
         turbineRpmLabel.text = (String(turbineSpin)) + "RPM"
         reactorDecrease = self.childNode(withName: "reactorDecrease") as! SKSpriteNode
@@ -64,48 +72,92 @@ class GameScene: SKScene {
     }
     
     func tempMatch(){
-        reactTemp += (Int(reactorRate()))/tempCount
-        priTemp += (Int(priCoolantRate()))/tempCount
-        secTemp += (Int(secCoolantRate()))/tempCount
-        turbineSpin += (Int(turbineSpinRate()))
+        reactorRate()
+        priCoolantRate()
+        heatExchRate()
+        secCoolantRate()
+        coolTwrRate()
+        turbineSpinRate()
         fuelTempAdjust()
     }
     
-    func reactorRate() -> Float{
-        reactTempRate = (5 * reactorPosition * fuelAvailable) - primaryFlow
-        
-        if reactTempRate > 20 {
-            reactTempRate = 20
+    func reactorRate(){
+        if(reactorPosition == 0.0){
+            reactTempRate = 10
+            reactTemp -= Int(reactTempRate)
+            if reactTemp < 500 {
+                reactTemp = 500
+            }
         }
-        return reactTempRate
+        if(primaryFlow != 0){
+            reactTarget = (reactorPosition*(1000/primaryFlow)) + 500
+            reactTarget *= fuelAvailable
+        }
+        if reactTarget > Float(reactTemp) {
+            reactTempRate = ((reactTarget - Float(reactTemp))/50) + 1
+            if reactTempRate > 20 {
+                reactTempRate = 20
+            }
+            reactTemp += Int(reactTempRate)
+        }
+        if reactTarget < Float(reactTemp) {
+            reactTempRate = ((reactTarget - Float(reactTemp))/50) + 1
+            if reactTempRate > 20 {
+                reactTempRate = 20
+            }
+            reactTemp -= Int(reactTempRate)
+        }
     }
     
-    func priCoolantRate() -> Float{
-        if primaryFlow > (5 * reactorPosition * fuelAvailable) {
-            priTempRate = reactTempRate
+    func priCoolantRate(){
+        priTarget = (primaryFlow * (Float(priMax)/100))
+        if Int(priTarget) > priTemp {
+            priTempRate = ((priTarget - Float(priTemp))/25)+1
+            priTemp += Int(priTempRate)
         }
-        else{
-            priTempRate = primaryFlow - (secondaryFlow/2)
+        if Int(priTarget) < priTemp {
+            priTempRate = ((Float(priTemp) - priTarget)/25)+1
+            priTemp -= Int(priTempRate)
         }
-        return priTempRate
     }
     
-    func secCoolantRate() -> Float{
-        if((secondaryFlow/2) > primaryFlow){
-            secTempRate = priTempRate
+    func heatExchRate(){
+        heatExc = Int((0.5 * Double(reactTemp-500))) + Int((1.5 * Double(primaryFlow)))
+        if heatExc < 50 {
+            heatExc = 50
         }
-        else{
-            secTempRate = secondaryFlow
-        }
-        return secTempRate
     }
     
-    func turbineSpinRate() -> Float {
-        if priTemp > 220 {
-            return Float(priTemp-220)
+    func secCoolantRate(){
+        secTarget = (secondaryFlow * (Float(secMax)/100))
+        if Int(secTarget) > secTemp {
+            secTempRate = ((secTarget - Float(secTemp))/25)+1
+            secTemp += Int(secTempRate)
+        }
+        if Int(secTarget) < secTemp {
+            secTempRate = ((Float(secTemp) - secTarget)/25)+1
+            secTemp -= Int(secTempRate)
+        }
+    }
+    
+    func coolTwrRate(){
+            coolTwr = Int((0.1 * Double(heatExc)) + (0.2 * Double(secondaryFlow)))
+        if coolTwr < 50 {
+            coolTwr = 50
+        }
+    }
+    
+    func turbineSpinRate(){
+        if heatExc > 100 {
+            turbineRate = Float(heatExc - 100) * 3
+            turbineSpin += Int(turbineRate)
         }
         else{
-            return 0.0
+            turbineRate = 10
+            turbineRate -= turbineRate
+            if turbineSpin < 0 {
+                turbineSpin = 0
+            }
         }
     }
     
@@ -116,9 +168,6 @@ class GameScene: SKScene {
         }
         else{
             fuelCount += 1
-        }
-        if tempCount > 1{
-            tempCount -= 1
         }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -175,8 +224,8 @@ class GameScene: SKScene {
         primaryFlowLabel.text = (String(Int(primaryFlow))) + "%"
         secondaryFlowLabel.text = (String(Int(secondaryFlow))) + "%"
         reactorTempLabel.text = (String(reactTemp)) + "\u{00B0}" + "C"
-        primaryTempLabel.text = (String(priTemp)) + "\u{00B0}" + "C"
-        secondaryTempLabel.text = (String(secTemp)) + "\u{00B0}" + "C"
-        turbineRpmLabel.text = (String(turbineSpin)) + "RPM"
+        primaryTempLabel.text = (String(heatExc)) + "\u{00B0}" + "C"
+        secondaryTempLabel.text = (String(coolTwr)) + "\u{00B0}" + "C"
+        turbineRpmLabel.text = (String(turbineSpin)) + " RPM"
     }
 }
