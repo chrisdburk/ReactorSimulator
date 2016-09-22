@@ -31,7 +31,7 @@ class GameScene: SKScene {
     var reactTempRate:Float = 0.0
     var priTempRate:Float = 0.0
     var secTempRate:Float = 0.0
-    var turbineRate:Float = 0.0
+    var turbineRate:Int = 0
     var priTemp:Int = 0
     var heatExc:Int = 50
     var priTarget:Float = 0.0
@@ -41,7 +41,9 @@ class GameScene: SKScene {
     var secMax:Int = 250
     var secTarget:Float = 0.0
     var turbineSpin:Int = 0
+    var turbineTarget:Int = 0
     var fuelAvailable:Float = 1.00
+    var currentPower:Int = 0
     var fuelCount:Int = 0
     var tempCount:Int = 3
     
@@ -79,6 +81,7 @@ class GameScene: SKScene {
         fuelTempAdjust()
         heatExchRate()
         coolTwrRate()
+        
     }
     
     func reactorRate(){
@@ -149,8 +152,15 @@ class GameScene: SKScene {
     
     func turbineSpinRate(){
         if heatExc > 100 {
-            turbineRate = Float(heatExc - 100) * 3
-            turbineSpin += Int(turbineRate)
+            turbineTarget = Int(0.3 * (Float(heatExc * secTemp)))
+            if turbineSpin < turbineTarget {
+                turbineRate = turbineTarget - turbineSpin
+                turbineSpin += turbineRate
+            }
+            if turbineSpin > turbineTarget{
+                turbineRate = turbineSpin - turbineTarget
+                turbineSpin -= turbineRate
+            }
         }
         else{
             turbineRate = 10
@@ -160,10 +170,18 @@ class GameScene: SKScene {
             }
         }
     }
+    func electricityRate(){
+        if turbineSpin > 200{
+            currentPower = 20000*(turbineSpin/60)
+        }
+        else{
+            currentPower = 0
+        }
+    }
     
     func fuelTempAdjust(){
-        if fuelCount == 3{
-            fuelAvailable -= 0.01
+        if fuelCount == 6{
+            fuelAvailable -= 0.1
             fuelCount = 0
         }
         else{
