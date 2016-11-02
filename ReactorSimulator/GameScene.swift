@@ -152,7 +152,7 @@ class GameScene: SKScene {
     
     func turbineSpinRate(){
         if heatExc > 100 {
-            turbineTarget = Int(0.3 * (Float(heatExc * secTemp)))
+            turbineTarget = Int(0.3 * (Float(heatExc * priTemp)))
             if turbineSpin < turbineTarget {
                 turbineRate = turbineTarget - turbineSpin
                 turbineSpin += turbineRate
