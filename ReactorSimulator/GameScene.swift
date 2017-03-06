@@ -22,6 +22,14 @@ class GameScene: SKScene {
     var priFlowDecrease:SKSpriteNode!
     var secFlowIncrease:SKSpriteNode!
     var secFlowDecrease:SKSpriteNode!
+    var reactor:SKSpriteNode!
+    var primary_coolant:SKSpriteNode!
+    var secondary_coolant:SKSpriteNode!
+    var cooling_tower:SKSpriteNode!
+    var emergency_coolant:SKSpriteNode!
+    var heat_exchange:SKSpriteNode!
+    var turbine:SKSpriteNode!
+    var generator:SKSpriteNode!
     var reactorPosition:Float = 0
     var primaryFlow:Float = 0
     var secondaryFlow:Float = 0
@@ -68,6 +76,14 @@ class GameScene: SKScene {
         priFlowIncrease = self.childNode(withName: "priFlowIncrease") as! SKSpriteNode
         secFlowDecrease = self.childNode(withName: "secFlowDecrease") as! SKSpriteNode
         secFlowIncrease = self.childNode(withName: "secFlowIncrease") as! SKSpriteNode
+        reactor = self.childNode(withName: "Reactor") as! SKSpriteNode
+        primary_coolant = self.childNode(withName: "Primary_coolant") as! SKSpriteNode
+        secondary_coolant = self.childNode(withName: "Secondary_coolant") as! SKSpriteNode
+        cooling_tower = self.childNode(withName: "Cooling_Tower") as! SKSpriteNode
+        emergency_coolant = self.childNode(withName: "Emergency_coolant") as! SKSpriteNode
+        heat_exchange = self.childNode(withName: "Heat_Exchange") as! SKSpriteNode
+        turbine = self.childNode(withName: "Turbine") as! SKSpriteNode
+        generator = self.childNode(withName: "Generator") as! SKSpriteNode
         
         let action = SKAction.sequence([SKAction.run(tempMatch), SKAction.wait(forDuration: 1.0)])
         run(SKAction.repeatForever(action))
@@ -88,27 +104,41 @@ class GameScene: SKScene {
         if(reactorPosition == 0.0){
             reactTempRate = 10
             reactTemp -= Int(reactTempRate)
-            if reactTemp < 500 {
-                reactTemp = 500
-            }
         }
         if(primaryFlow != 0){
             reactTarget = (reactorPosition*(1000/primaryFlow))
             reactTarget *= fuelAvailable
-        }
-        if reactTarget > Float(reactTemp) {
-            reactTempRate = ((reactTarget - Float(reactTemp))/50) + 1
-            if reactTempRate > 20 {
-                reactTempRate = 20
+            
+            if reactTarget > Float(reactTemp) {
+                reactTempRate = ((reactTarget - Float(reactTemp))/50) + 1
+                if reactTempRate > 20 {
+                    reactTempRate = 20
+                }
+                reactTemp += Int(reactTempRate)
             }
-            reactTemp += Int(reactTempRate)
-        }
-        if reactTarget < Float(reactTemp) {
-            reactTempRate = ((reactTarget - Float(reactTemp))/50) + 1
-            if reactTempRate > 20 {
-                reactTempRate = 20
+            if reactTarget < Float(reactTemp) {
+                reactTempRate = ((Float(reactTemp) - reactTarget)/50) + 1
+                if reactTempRate > 20 {
+                    reactTempRate = 20
+                }
+                reactTemp -= Int(reactTempRate)
             }
-            reactTemp -= Int(reactTempRate)
+        }
+        if(reactTemp < 500){
+            reactTemp = 500
+        }
+        reactorStatus()
+    }
+    
+    func reactorStatus(){
+        if reactTemp >= 500 && reactTemp < 750{
+            reactor.color = .green
+        }
+        if reactTemp >= 750 && reactTemp < 1000{
+            reactor.color = .yellow
+        }
+        if reactTemp >= 1000 && reactTemp < 1200{
+            reactor.color = .red
         }
     }
     
@@ -125,10 +155,24 @@ class GameScene: SKScene {
     }
     
     func heatExchRate(){
-        heatExc = Int((0.5 * Double(reactTemp-500))) + Int((1.5 * Double(primaryFlow)))
+        heatExc = Int((0.5 * Double(reactTemp-500))) + Int((1.5 * Double(priTemp)))
         if heatExc < 50 {
             heatExc = 50
         }
+        heatExchStatus()
+    }
+    
+    func heatExchStatus(){
+        if heatExc >= 50 && heatExc < 300{
+            heat_exchange.color = .green
+        }
+        if  heatExc >= 300 && heatExc < 550{
+            heat_exchange.color = .yellow
+        }
+        if  heatExc >= 550 && heatExc < 800{
+            heat_exchange.color = .red
+        }
+
     }
     
     func secCoolantRate(){
@@ -148,6 +192,20 @@ class GameScene: SKScene {
         if coolTwr < 50 {
             coolTwr = 50
         }
+        coolTwrStatus()
+    }
+    
+    func coolTwrStatus(){
+        if coolTwr >= 50 && coolTwr < 300{
+            cooling_tower.color = .green
+        }
+        if  coolTwr >= 300 && coolTwr < 550{
+            cooling_tower.color = .yellow
+        }
+        if  coolTwr >= 550 && coolTwr < 800{
+            cooling_tower.color = .red
+        }
+
     }
     
     func turbineSpinRate(){
@@ -181,7 +239,7 @@ class GameScene: SKScene {
     
     func fuelTempAdjust(){
         if fuelCount == 6{
-            fuelAvailable -= 0.1
+            fuelAvailable -= 0.01
             fuelCount = 0
         }
         else{
